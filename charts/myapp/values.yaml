@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   respository: venkatesh1409/threadedtreasures
-  tag: "0.0.2"
+  tag: "0.0.1"
   pullPolicy: IfNotPresent
 
 service:
@@ -10,3 +10,5 @@ service:
   port: 8080
   targetPort: 8080
   nodePort: 30007
+
+resources: {}
