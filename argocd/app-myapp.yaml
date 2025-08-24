@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL:
+    repoURL: https://gitlab.com/tvenkateshwarlu39/cd-repo.git
     targetRevision: main
     path: charts/myapp
   destination:
