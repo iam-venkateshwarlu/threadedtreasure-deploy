@@ -1,0 +1,14 @@
+appVersion: v1
+kind: service
+metadata:
+  name: myapp
+  labels:
+    app: myapp
+spec:
+  type: {{ .Values.service.type }}
+  sekector:
+    app: myapp
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
+      nodePort: {{ .Values.service.nodePort }}
