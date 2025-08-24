@@ -1,8 +1,8 @@
-replicaCount 1
+replicaCount: 1
 
 image:
   respository: venkatesh1409/threadedtreasures
-  tag: "0.0.1"
+  tag: "0.0.2"
   pullPolicy: IfNotPresent
 
 service:

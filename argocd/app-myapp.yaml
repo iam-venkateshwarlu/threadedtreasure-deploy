@@ -1,4 +1,4 @@
-appVersion:: argoproj.io/v1alpha1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: myapp
@@ -6,11 +6,11 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://gitlab.com/tvenkateshwarlu39/cd-repo.git
+    repoURL: 'https://gitlab.com/tvenkateshwarlu39/cd-repo.git'
     targetRevision: main
     path: charts/myapp
   destination:
-    server: https://kubernetes.default.svc
+    server: 'https://kubernetes.default.svc'
     namespace: default
   syncPolicy:
     automated:
