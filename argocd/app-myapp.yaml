@@ -1,20 +1,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myapp
+  name: monitoring
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: 'https://gitlab.com/tvenkateshwarlu39/cd-repo.git'
-    targetRevision: main
-    path: charts/myapp
+    repoURL: https://prometheus-community.github.io/helm-charts
+    chart: kube-prometheus-stack
+    targetRevision: 61.2.0   # check latest version
+    helm:
+      releaseName: monitoring
+      values: |
+        grafana:
+          adminPassword: prom-operator
   destination:
-    server: 'https://kubernetes.default.svc'
-    namespace: default
+    server: https://kubernetes.default.svc
+    namespace: monitoring
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
