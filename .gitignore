@@ -1,18 +1,17 @@
-cat > .gitignore <<EOF
+# Terraform local cache
 **/.terraform/*
+
+# State files
 *.tfstate
 *.tfstate.*
+
+# Sensitive vars
 *.tfvars
 *.tfvars.json
+
+# Plans
 *.tfplan
+
+# Crash logs
 crash.log
 crash.*.log
-override.tf
-override.tf.json
-*_override.tf
-*_override.tf.json
-.terraformrc
-terraform.rc
-EOF
-git add .gitignore
-git commit -m "Add Terraform .gitignore"
