@@ -1,27 +1,18 @@
-# Local .terraform directories
+cat > .gitignore <<EOF
 **/.terraform/*
-
-# Terraform state files
 *.tfstate
 *.tfstate.*
-
-# Crash log files
+*.tfvars
+*.tfvars.json
+*.tfplan
 crash.log
 crash.*.log
-
-# Override files (local-only configuration)
 override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
-
-# Terraform plan files
-*.tfplan
-
-# Sensitive variable files
-*.tfvars
-*.tfvars.json
-
-# CLI configuration
 .terraformrc
 terraform.rc
+EOF
+git add .gitignore
+git commit -m "Add Terraform .gitignore"
