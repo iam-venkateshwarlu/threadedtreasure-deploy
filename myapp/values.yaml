@@ -11,4 +11,8 @@ service:
   targetPort: 8080
   nodePort: 30007
 
+ingress:
+  enabled: true
+  hostname: myapp.local # Change this to your desired hostname
+
 resources: {}
