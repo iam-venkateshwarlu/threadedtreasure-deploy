@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: threadedtreasure-service
+  labels:
+    app: threadedtreasure
+spec:
+  selector:
+    app: threadedtreasure
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: NodePort

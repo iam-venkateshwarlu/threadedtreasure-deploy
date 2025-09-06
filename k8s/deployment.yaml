@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: threadedtreasure-app
+  namespace: default
+  labels:
+    app: threadedtreasure
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: threadedtreasure
+  template:
+    metadata:
+      labels:
+        app: threadedtreasure
+    spec:
+      containers:
+      - name: threadedtreasure
+        image: docker.io/venkatesh1409/ecommerce-app:0.0.2
+        ports:
+        - containerPort: 3000
+      imagePullSecrets:
+      - name: ttregistrykey
