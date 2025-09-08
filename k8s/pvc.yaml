@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: persistentVolumeReclaim
+metadata:
+  name: pvc-data
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

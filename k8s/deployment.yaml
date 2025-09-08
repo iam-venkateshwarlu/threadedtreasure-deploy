@@ -22,3 +22,7 @@ spec:
         - containerPort: 3000
       imagePullSecrets:
       - name: ttregistrykey
+      volumes:
+      - name: pv-volume
+        persistentVolumeClaim:
+          claimName: pvc-data
