@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: threadedtreasure
-        image: docker.io/venkatesh1409/ecommerce-app:0.0.2
+        image: docker.io/venkatesh1409/ecommerce-app:0.0.3
         ports:
         - containerPort: 3000
         volumeMounts:
