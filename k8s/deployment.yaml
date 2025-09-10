@@ -20,9 +20,12 @@ spec:
         image: docker.io/venkatesh1409/ecommerce-app:0.0.2
         ports:
         - containerPort: 3000
+        volumeMounts:
+        - mountPath: "/data"          # <-- where you want it inside the container
+          name: pv-volume
       imagePullSecrets:
       - name: ttregistrykey
       volumes:
-      - name: pv-volume
+      - name: pv-volume              # <-- this matches the name used in volumeMounts
         persistentVolumeClaim:
           claimName: pvc-data

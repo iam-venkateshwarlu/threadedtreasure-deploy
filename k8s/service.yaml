@@ -5,6 +5,7 @@ metadata:
   labels:
     app: threadedtreasure
 spec:
+  # type: LoadBalancer
   selector:
     app: threadedtreasure
   ports:
